@@ -31,6 +31,7 @@ function importElements(parentElement: Element, srcObj: SrcObj) {
     const audio = new Audio();
     audio.src = srcObj.src[i];
     audio.dataset.key = srcObj.key[i];
+
     const keyElem = document.createElement("kbd");
     keyElem.classList.add(
       "border",
@@ -41,16 +42,17 @@ function importElements(parentElement: Element, srcObj: SrcObj) {
     );
     keyElem.id = srcObj.key[i];
     keyElem.innerText = srcObj.key[i].toUpperCase();
+
     const p = document.createElement("p");
     p.classList.add("text-gray-500", "text-center");
     p.innerText = extractFileName(srcObj.src[i]);
+
     const div = document.createElement("div");
     div.classList.add("flex", "flex-col", "gap-2");
-
     div.appendChild(audio);
     div.appendChild(keyElem);
     div.appendChild(p);
-    // div.id = srcObj.key[i];
+
     parentElement.appendChild(div);
   }
 }

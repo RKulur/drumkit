@@ -1,8 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/(.wav)",
-      "destination": "/sounds"
+      "source": "/(*.wav)",
+      "destination": "/sounds/"
     }
   ]
 }
